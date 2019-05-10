@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>Blogs</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'layout.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="{% static 'posted_blogs.js' %}"></script>
+    <meta name="first_name" content="{{author.first_name}}">
+    <meta name="last_name" content="{{author.last_name}}">
+    <meta name="gender" content="{{author.gender}}">
+    <meta name="profession" content="{{author.profession}}">
+    <meta name="title" content="{{blog.title}}">
+    <meta name="description" content="{{blog.description}}">
+    <meta name="likes" content="{{blog.likes}}">
+    <meta name="dislikes" content="{{blog.dislikes}}">
+<!--    <meta name="csrf-token" content="{{csrf_token}}" > -->
+</head>
+
+<body onload="save_blog()">
+    <h1>Posted Blogs</h1>
+    <br>
+    <div class="postedblog">
+     <h2>{{author.first_name}} {{author.last_name}}</h2>
+        <p>{{author.gender}}, {{author.profession}}</p>
+        <br>
+     <h3>{{blog.title}}</h3>
+        <p>{{blog.description}}</p>
+        <br>
+        <a style="text-decoration:none" href="javascript:increment_likes()"> &#x1f44d;</a> <a id="demo" name="liked"> {{blog.likes}}</a> | <a style="text-decoration:none" href="javascript:increment_dislikes()"> &#x1f44e;</a> <a id="demo1"> {{blog.dislikes}}</a>
+    </div>
+
+</body>
+</html>

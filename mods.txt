@@ -1,0 +1,21 @@
+        try:
+            print(request.POST['count'])
+        except:
+            print("Fail")
+            pass
+
+
+var token = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+
+
+
+/*$.ajax({
+        type:"POST",
+        url: "../saveblog/",
+        data: {count : likes},
+        success: function()
+        {
+           alert("Liked");
+        }
+     });
+{% csrf_token %}*/
